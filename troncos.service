@@ -1,0 +1,13 @@
+[Unit]
+Description=Monitoramento dos troncos
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/Scripts/troncos.sh
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
